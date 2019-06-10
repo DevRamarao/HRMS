@@ -6,19 +6,7 @@ using System.Threading.Tasks;
 
 namespace hrms
 {
-    
-    class employee
-    {
-        public int emp_id { get; set; }
-        public string name { get; set; }
-        public string mobile { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public string adress { get; set; }
-        public string designation { get; set; }
-    }
-    
-    class admin : employee
+    class admin
     {
         public void login()
         {
@@ -37,20 +25,53 @@ namespace hrms
             }
         }
     }
-    
-    
-    class dept
+    class employee
     {
-        public int dept_id { get; set; }
-        public string dept_name { get; set; }
-        public string dept_type { get; set; }
+        public int employeeID;
+        public string Name;
+        public string EMail;
+        public string Adress;
+        public int Phonenumber;
+
+        public void Emp(int eID, string eName, string eEMail, string eAdress, int ePhonenumber)
+        {
+            employeeID = eID;
+            Name = eName;
+            EMail = eEMail;
+            Adress = eAdress;
+            Phonenumber = ePhonenumber;
+        }
+        public void displayemp()
+        {
+            Console.WriteLine("Employee id {0}", employeeID);
+            Console.WriteLine("Employee Name {0}", Name);
+            Console.WriteLine("Email id {0}", EMail);
+            Console.WriteLine("Employee Adress{0}", Adress);
+            Console.WriteLine("Employee phonenumber  {0}", Phonenumber);
+
+        }
+            
+
+
+
+
+            
+        }
+
     }
-    class traning : dept
+    class traning : admin
     {
         public int train_id { get; set; }
         public string trian_name { get; set; }
         public string trian_type { get; set; }
         public int trian_year { get; set; }
+    }
+    class dept : employee
+    {
+
+        public int dept_id { get; set; }
+        public string dept_name { get; set; }
+        public string dept_type { get; set; }
     }
     class payroll : dept
     {
@@ -60,35 +81,36 @@ namespace hrms
         public string pr_slipnumb { get; set; }
                      
     }
-    class prerformance
+    class prerformane : employee
     {
         public int performane_id { get; set;}
 
         public string performane_emp_name { get; set; }
         public string performane_date { get; set; }
         public string performane_type { get; set; }
-    }
-    class resignation
+                   }
+    class resignation : employee
     {
         public int resignation_emp_id { get; set; }
         public string resignation_emp_name { get; set; }
 
         public string resignation_emp_date { get; set; }
+
     }
-    
     class Program
     {
         static void Main(string[]  args)
         {
             admin a = new admin();
             a.login();
-            
             Console.WriteLine("enter employee details");
             employee e = new employee();
+
             
-            Console.WriteLine("employee id " + e.emp_id);            
-            Console.ReadLine();
+      
+
         }
         
     }
 }
+
