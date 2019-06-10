@@ -28,89 +28,89 @@ namespace hrms
     class employee
     {
         public int employeeID;
-        public string Name;
-        public string EMail;
-        public string Adress;
-        public int Phonenumber;
+        public string empName;
+        public string empEmail;
+        public string empAdress;
+        public int empPhonenumber;
 
-        public void Emp(int eID, string eName, string eEMail, string eAdress, int ePhonenumber)
-        {
-            employeeID = eID;
-            Name = eName;
-            EMail = eEMail;
-            Adress = eAdress;
-            Phonenumber = ePhonenumber;
-        }
-        public void displayemp()
-        {
-            Console.WriteLine("Employee id {0}", employeeID);
-            Console.WriteLine("Employee Name {0}", Name);
-            Console.WriteLine("Email id {0}", EMail);
-            Console.WriteLine("Employee Adress{0}", Adress);
-            Console.WriteLine("Employee phonenumber  {0}", Phonenumber);
-
-        }
+        public void  Empdetails()
+            {
             
+            int eid = int.Parse(Console.ReadLine());
+            employeeID = eid;
+            string name = Convert.ToString(Console.ReadLine());
+            empName = name;
+            string email = Convert.ToString(Console.ReadLine());
+            empEmail = email;
+            string adress = Convert.ToString(Console.ReadLine());
+            empAdress = adress;
+            int phonenum = int.Parse(Console.ReadLine());
+            empPhonenumber = phonenum;
 
-
-
-
-            
-        }
-
-    }
-    class traning : admin
-    {
-        public int train_id { get; set; }
-        public string trian_name { get; set; }
-        public string trian_type { get; set; }
-        public int trian_year { get; set; }
-    }
-    class dept : employee
-    {
-
-        public int dept_id { get; set; }
-        public string dept_name { get; set; }
-        public string dept_type { get; set; }
-    }
-    class payroll : dept
-    {
-        public int pr_id { get; set; }
-        public string pr_name { get; set; }
-        public int  pr_date { get; set; }
-        public string pr_slipnumb { get; set; }
-                     
-    }
-    class prerformane : employee
-    {
-        public int performane_id { get; set;}
-
-        public string performane_emp_name { get; set; }
-        public string performane_date { get; set; }
-        public string performane_type { get; set; }
-                   }
-    class resignation : employee
-    {
-        public int resignation_emp_id { get; set; }
-        public string resignation_emp_name { get; set; }
-
-        public string resignation_emp_date { get; set; }
+            }
 
     }
-    class Program
-    {
-        static void Main(string[]  args)
+      class traning : admin
         {
-            admin a = new admin();
-            a.login();
-            Console.WriteLine("enter employee details");
-            employee e = new employee();
+            public int train_id { get; set; }
+            public string trian_name { get; set; }
+            public string trian_type { get; set; }
+            public int trian_year { get; set; }
+        }
+        class dept : employee
+        {
 
-            
-      
+            public int dept_id { get; set; }
+            public string dept_name { get; set; }
+            public string dept_type { get; set; }
+        }
+        class payroll : dept
+        {
+            public int pr_id { get; set; }
+            public string pr_name { get; set; }
+            public int pr_date { get; set; }
+            public string pr_slipnumb { get; set; }
 
+        }
+        class prerformane : employee
+        {
+            public int performane_id { get; set; }
+
+            public string performane_emp_name { get; set; }
+            public string performane_date { get; set; }
+            public string performane_type { get; set; }
+        }
+        class resignation : employee
+        {
+            public int resignation_emp_id { get; set; }
+            public string resignation_emp_name { get; set; }
+
+            public string resignation_emp_date { get; set; }
+
+        }
+        class Program
+        {
+            static void Main(string[] args)
+            {
+
+            employee E = new employee();      
+            Console.WriteLine("Employee id ", +E.employeeID);
+            Console.WriteLine("Employee Name ", E.empName);
+            Console.WriteLine("Email id {0}", E.empEmail);
+            Console.WriteLine("Employee Adress{0}", E.empAdress);
+            Console.WriteLine("Employee phonenumber  {0}", E.empPhonenumber);
+            Console.Read();
+
+
+               
         }
         
+       
+        }
     }
-}
+
+
+
+
+
 
